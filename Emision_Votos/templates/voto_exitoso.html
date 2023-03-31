@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<section class="py-4 py-xl-5">
+    <div class="container">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <h1 class="fw-bold text-primary alert-heading display-6">
+                Voto Exitoso
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class="text-center p-4 p-lg-5">
+            <h1 class="fw-bold my-4">
+                Tu Voto ha sido procesado con Exito
+                <br>
+                Gracias!
+            </h1>
+            <a href="{% url 'inicio' %}" class="btn btn-primary fs-5 me-2 py-2 px-4 my-3" type="button">
+                Inicio
+            </a>
+            <a href="{% url 'historial_votaciones' %}" class="btn btn-light fs-5 me-2 py-2 px-4" type="button">
+                Historial 
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

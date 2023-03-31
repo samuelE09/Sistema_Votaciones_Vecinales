@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+        <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 mb-3">Usa de manera responsable esta Herramienta</h1>
+            <p class="col-lg-10 fs-4">El Sistema de Votaciones Online es una herramienta que funciona de manera local, es decir, no se encuentra alojada en internet, que pretende establecer una mejora en las decisiones tomadas referentes a la mejora de la comunidad mediante las Votaciones de sus Vecinos </p>
+        </div>
+        <div class="col-md-10 mx-auto col-lg-5">
+            <div>
+                <button type="button" class="btn alert alert-primary">
+                    <a href="#" class="alert-link">Facebook</a> 
+                </button>
+            </div>
+            <div>
+                <button type="button" class="btn alert alert-success">
+                    <a href="#" class="alert-link">Whatsapp</a> 
+                </button>
+            </div>
+                    <!-- Button trigger modal -->
+            <button type="button" class="btn alert alert-danger  " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <a href="#" class="alert-link">Emergencia </a> 
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Numeros de Emergencia</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table-striped">
+                                <thead>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Institución</th>
+                                    <th scope="col">Contacto</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Comisaria 26 de Octubre</td>
+                                        <td>123456789</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Bomberos</td>
+                                        <td>123456789</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Hospital Santa Rosa</td>
+                                        <td>123456789</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="">
+    <h1 class="mb-4 display-4 fw-bold">Votaciones Activas </h1>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <h4 class="alert-heading fw-bold display-6">Hola Vecino!</h4>
+        <p class="fs-4">Gracias por Participar, tu Voto es Importante! </p>
+        <hr>
+        <p class="fw-italic fs-6">  <strong>Recuerda</strong> Por Favor emitir tu voto por solo una vez! </p>
+
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% for voto in list_votaciones_activas %}
+    <div class="card my-3">
+        <div class="card-header my-3">
+            <h5>{{voto.title}} <span class="badge text-bg-success">Activo</span></h5>
+        </div>
+        <div class="card-body my-3">
+            <p class="card-text">{{voto.description}}</p>
+        </div>
+        <div class="card-footer text-center">
+            <form action="{% url 'votacion' voto.id %}" method="post">
+                {% csrf_token %}
+                <button name="voto" type="submit" value="voto_favor" class="btn btn-success my-3 mx-2">Voto a Favor</button>
+                <button name="voto" type="submit" value="voto_null" class="btn btn-secondary my-3 mx-2">Voto en Blanco</button>
+                <button name="voto" type="submit" value="voto_contra" class="btn btn-danger my-3 mx-2">Voto en Contra</button>
+            </form> 
+        </div>  
+    </div>
+    {% empty %}
+    <div class="alert alert-warning" role="alert">
+        No hay Votaciones Activas Actualmente
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
+{% endblock %}

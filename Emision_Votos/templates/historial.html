@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h1 class="mb-5 display-4 fw-bold">Lista de Votaciones</h1>
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for voto in list_votaciones %}
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                {% if voto.state %}
+                    <h5>{{voto.title}} <span class="badge text-bg-danger">Cerrado</span>
+                    </h5>
+                {% else %}
+                    <h5>{{voto.title}} <span class="badge text-bg-success">Activo</span>
+                    </h5>
+                {% endif %}
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{voto.description}}</p>
+            </div>
+            <div class="card-footer">
+               <p class="fs-4 fw-semibold">Total de Votos : {{voto.total}}</p>
+               <div class="btn-group" role="group" aria-label="Basic outlined example">
+                <button type="button" class="btn btn-success fs-5">
+                    {{voto.count_favor}}
+                </button>
+                <button type="button" class="btn btn-secundary fs-5">
+                    {{voto.count_null}}
+                </button>
+                <button type="button" class="btn btn-danger fs-5">
+                    {{voto.count_contra}}
+                </button>
+              </div>
+            </div> 
+        </div>
+    </div>
+    {% empty %}
+    <div class="alert alert-warning" style="width:100%" role="alert">
+        Aún no Tenemos registros de Votaciones
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
